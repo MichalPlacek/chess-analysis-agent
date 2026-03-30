@@ -1,0 +1,19 @@
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+# secrets
+.env
+
+# project internals (not for public repo)
+CLAUDE.md
+PLAN.md
+dokument.md
+
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# empty scaffold dir
+src/
