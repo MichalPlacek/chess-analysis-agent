@@ -53,7 +53,7 @@ with col_analysis:
             st.error(f"Agent error: {e}")
             st.stop()
 
-    validation = result.get("validation", {})
+        validation = result.get("validation", {})
 
     if not validation.get("valid"):
         st.error(f"Invalid position: {validation.get('error', 'unknown error')}")
