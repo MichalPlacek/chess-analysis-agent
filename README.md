@@ -66,7 +66,7 @@ The `generate_explanation` node passes all tool results to Claude and gets back 
 | Chess engine | [Stockfish](https://stockfishchess.org/) |
 | Chess logic | [python-chess](https://python-chess.readthedocs.io/) |
 | Web UI | [Streamlit](https://streamlit.io/) |
-| Environment | [Pixi](https://pixi.sh) |
+| Environment | [uv](https://docs.astral.sh/uv/) |
 
 ---
 
@@ -85,7 +85,9 @@ The `generate_explanation` node passes all tool results to Claude and gets back 
 ├── tests/
 │   ├── test_tools.py       # Unit tests for each tool
 │   └── test_graph.py       # End-to-end graph tests
-├── pyproject.toml          # Pixi config & dependencies
+├── agent/
+│   └── run.py              # CLI entry point (chess-agent script)
+├── pyproject.toml          # uv config & dependencies
 └── .env.example
 ```
 
@@ -95,7 +97,7 @@ The `generate_explanation` node passes all tool results to Claude and gets back 
 
 ### Prerequisites
 
-- [Pixi](https://pixi.sh) — dependency manager
+- [uv](https://docs.astral.sh/uv/) — dependency manager
 - **Stockfish** — install via your system package manager:
 
   ```bash
@@ -117,20 +119,20 @@ The `generate_explanation` node passes all tool results to Claude and gets back 
 
 ```bash
 # 1. Install Python dependencies
-pixi install
+uv sync
 
 # 2. Set up environment variables
 cp .env.example .env
 # Edit .env and set ANTHROPIC_API_KEY=your_key_here
 
 # 3. Run the app
-pixi run streamlit run app.py
+uv run chess-agent
 ```
 
 ### Running tests
 
 ```bash
-pixi run pytest tests/
+uv run pytest tests/
 ```
 
 ---
