@@ -7,7 +7,6 @@ dependencies = [
     "langgraph",
     "langchain-anthropic",
     "python-chess",
-    "streamlit",
     "python-dotenv",
     "pytest",
     "langserve[all]",
@@ -16,10 +15,7 @@ dependencies = [
 ]
 
 [project.scripts]
-chess-agent = "agent.run:main"
-
-[tool.uv.scripts]
-serve = "uvicorn server:app --reload"
+chess-serve = "agent.serve:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["agent"]

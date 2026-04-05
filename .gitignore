@@ -5,6 +5,9 @@
 # secrets
 .env
 
+#intelij
+.idea/*
+
 # project internals (not for public repo)
 CLAUDE.md
 PLAN.md
