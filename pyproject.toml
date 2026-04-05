@@ -10,10 +10,16 @@ dependencies = [
     "streamlit",
     "python-dotenv",
     "pytest",
+    "langserve[all]",
+    "fastapi",
+    "uvicorn[standard]",
 ]
 
 [project.scripts]
 chess-agent = "agent.run:main"
+
+[tool.uv.scripts]
+serve = "uvicorn server:app --reload"
 
 [tool.hatch.build.targets.wheel]
 packages = ["agent"]
